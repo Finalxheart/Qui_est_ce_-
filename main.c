@@ -8,7 +8,7 @@
 #define NB_PERSO 40
 
 int main(int argc, char *argv[]) {
-    srand(time(NULL));
+    // srand(time(NULL));
     int i;
     PtListe allPerso = init();
     persoCharacteristic perso;
@@ -18,8 +18,10 @@ int main(int argc, char *argv[]) {
         allPerso = inserthead(allPerso, perso);
     }
 
+
+
     showListe(allPerso);
-    printf("perso.name : %s\n\n", perso.name);
+    printf("\nDelete %s\n\n", perso.name);
     allPerso = deleteCharacter(allPerso, perso);
     showListe(allPerso);
 

@@ -20,30 +20,28 @@ PtListe inserthead(PtListe L, persoCharacteristic newCharacter){
 
 PtListe deleteHead(PtListe L) {
     PtListe P;
-    P = L;
     if (L != NULL) {
-        P = (PtListe)L->suivant;
+        P = L;
+        L = (PtListe)L->suivant;
         free(P);
     }
     return P;
 }
 
 PtListe deleteCharacter(PtListe myListe, persoCharacteristic target){
-    PtListe P;
-    P = myListe;
-
-    printf("character.name : %s\n", myListe->character.name);
-    printf("target.name    : %s\n\n", target.name);
-
-    if (myListe == NULL) {
-        return P;
-    } else if (strcmp(myListe->character.name, target.name)) {
-        // printf("enter\n");
-        return deleteHead(myListe);
-    } else {
-        return deleteCharacter((PtListe)myListe->suivant, target);
+    if (myListe == NULL) return NULL;
+    else {
+        PtListe L = myListe;
+        while (L != NULL) {
+            if (!strcmp(L->character.name, target.name)) {
+                printf("enter in compare\n");
+                printf("Delete %s\n", L->character.name);
+                L = deleteHead(L);
+            }
+            L = (PtListe)L->suivant;
+        }
     }
-    return P;
+    return myListe;
 }
 
 void showListe(PtListe L) {

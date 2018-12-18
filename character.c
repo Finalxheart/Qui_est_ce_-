@@ -7,7 +7,7 @@
 #include "liste.h"
 
 persoCharacteristic createCharacter(){
-    char name[3][20]      = {"Jérémy", "Felix", "Sofiane"};
+    char name[7][20]      = {"Jérémy", "Felix", "Sofiane", "Toto", "Tata", "Titi", "Tutu"};
     char formes[3][20]    = {"Square", "Ovale", "Rond"};
     char longHair[3][20]  = {"None", "Short", "Long"};
     char eyes[4][20]      = {"Blacks", "Browns", "Blues", "Greens"};
@@ -16,7 +16,7 @@ persoCharacteristic createCharacter(){
     char accessory[3][20] = {"None", "Glasses", "Hat"};
 
     persoCharacteristic perso;
-    strcpy(perso.name,      name[rand()%3]);
+    strcpy(perso.name,      name[rand()%7]);
     strcpy(perso.formes,    formes[rand()%3]);
     strcpy(perso.longHair,  longHair[rand()%3]);
     strcpy(perso.eyes,      eyes[rand()%4]);
