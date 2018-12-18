@@ -39,7 +39,7 @@ PtListe deleteCharacter(PtListe myListe, persoCharacteristic target){
                 L = deleteHead(L);
             }
             L = (PtListe)L->suivant;
-        }
+        } //coucou
     }
     return myListe;
 }
